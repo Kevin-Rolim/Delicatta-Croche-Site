@@ -1,42 +1,52 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
 
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Sobre", path: "/sobre" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "Contato", path: "/contato" },
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+      setActiveSection(sectionId);
+    }
+  };
+
+  const menuItems = [
+    { name: "Home", id: "home" },
+    { name: "Portfolio", id: "portfolio" },
+    { name: "Sobre", id: "sobre" },
+    { name: "Instagram", id: "instagram" },
+    { name: "Contato", id: "contato" },
   ];
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex flex-col">
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="flex flex-col cursor-pointer"
+          >
             <span className="font-serif text-2xl md:text-3xl font-bold">Delicatta</span>
             <span className="text-xs md:text-sm text-muted-foreground">Crochê com Carinho</span>
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className={`font-medium transition-colors hover:text-rose ${
-                  isActive(item.path) ? "text-rose" : "text-foreground"
+                  activeSection === item.id ? "text-rose" : "text-foreground"
                 }`}
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -55,17 +65,16 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-fade-in">
             <div className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`font-medium py-2 transition-colors hover:text-rose ${
-                    isActive(item.path) ? "text-rose" : "text-foreground"
+              {menuItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`font-medium py-2 transition-colors hover:text-rose text-left ${
+                    activeSection === item.id ? "text-rose" : "text-foreground"
                   }`}
                 >
                   {item.name}
-                </Link>
+                </button>
               ))}
             </div>
           </div>
