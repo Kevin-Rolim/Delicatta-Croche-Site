@@ -10,7 +10,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
-
 const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,58 +18,41 @@ const Home = () => {
     whatsapp: "",
     email: "",
     subject: "",
-    message: "",
+    message: ""
   });
-
   const handleProductClick = (product: typeof products[0]) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
   };
-
   const handleWhatsApp = () => {
     const phoneNumber = "5517991483104";
     const message = encodeURIComponent("Olá! Gostaria de conhecer mais sobre as peças artesanais da Delicatta.");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
     if (!formData.name || !formData.whatsapp || !formData.subject || !formData.message) {
       toast.error("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
-
-    const whatsappMessage = encodeURIComponent(
-      `*Contato via Site*\n\n` +
-      `*Nome:* ${formData.name}\n` +
-      `*WhatsApp:* ${formData.whatsapp}\n` +
-      `${formData.email ? `*Email:* ${formData.email}\n` : ''}` +
-      `*Assunto:* ${formData.subject}\n\n` +
-      `*Mensagem:*\n${formData.message}`
-    );
-
+    const whatsappMessage = encodeURIComponent(`*Contato via Site*\n\n` + `*Nome:* ${formData.name}\n` + `*WhatsApp:* ${formData.whatsapp}\n` + `${formData.email ? `*Email:* ${formData.email}\n` : ''}` + `*Assunto:* ${formData.subject}\n\n` + `*Mensagem:*\n${formData.message}`);
     window.open(`https://wa.me/5517991483104?text=${whatsappMessage}`, "_blank");
-
     setFormData({
       name: "",
       whatsapp: "",
       email: "",
       subject: "",
-      message: "",
+      message: ""
     });
-
     toast.success("Redirecionando para o WhatsApp...");
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        id="home"
-        className="relative py-20 md:py-32 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroPattern})`, backgroundBlendMode: 'overlay', backgroundColor: 'rgba(255, 251, 245, 0.85)' }}
-      >
+      <section id="home" className="relative py-20 md:py-32 bg-cover bg-center" style={{
+      backgroundImage: `url(${heroPattern})`,
+      backgroundBlendMode: 'overlay',
+      backgroundColor: 'rgba(255, 251, 245, 0.85)'
+    }}>
         <div className="container mx-auto px-4 text-center">
           <h1 className="font-serif text-5xl md:text-7xl font-bold mb-4 animate-fade-up">
             Delicatta
@@ -81,12 +63,9 @@ const Home = () => {
           <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 animate-fade-up">
             Peças artesanais únicas em crochê, feitas com amor e dedicação
           </p>
-          <Button 
-            variant="rose" 
-            size="lg" 
-            className="animate-fade-up"
-            onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button variant="rose" size="lg" className="animate-fade-up" onClick={() => document.getElementById('portfolio')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             Conheça Nosso Portfolio
           </Button>
         </div>
@@ -100,14 +79,7 @@ const Home = () => {
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              name={product.name}
-              image={product.image}
-              onClick={() => handleProductClick(product)}
-            />
-          ))}
+          {products.map(product => <ProductCard key={product.id} name={product.name} image={product.image} onClick={() => handleProductClick(product)} />)}
         </div>
 
         <div className="text-center mt-12">
@@ -118,11 +90,7 @@ const Home = () => {
             <p className="text-muted-foreground mb-6">
               Criamos peças personalizadas sob encomenda. Entre em contato!
             </p>
-            <Button
-              onClick={handleWhatsApp}
-              size="lg"
-              className="bg-[#25D366] hover:bg-[#20BD5A] text-white"
-            >
+            <Button onClick={handleWhatsApp} size="lg" className="bg-[#25D366] hover:bg-[#20BD5A] text-white">
               Fale Conosco no WhatsApp
             </Button>
           </div>
@@ -154,11 +122,7 @@ const Home = () => {
               </p>
             </div>
             <div className="relative">
-              <img
-                src={aboutImage}
-                alt="Processo artesanal"
-                className="rounded-lg shadow-xl"
-              />
+              <img src={aboutImage} alt="Processo artesanal" className="rounded-lg shadow-xl" />
             </div>
           </div>
 
@@ -183,9 +147,7 @@ const Home = () => {
                   <span className="text-2xl font-serif font-bold text-rose">1</span>
                 </div>
                 <h4 className="font-semibold mb-2">Seleção de Materiais</h4>
-                <p className="text-sm text-muted-foreground">
-                  Escolhemos fios premium de algodão e materiais de qualidade
-                </p>
+                <p className="text-sm text-muted-foreground">Escolhemos fios de algodão e materiais de qualidade</p>
               </div>
 
               <div className="text-center">
@@ -305,34 +267,19 @@ const Home = () => {
       <section id="instagram" className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Acompanhe Nosso Trabalho</h2>
-          <a
-            href="https://instagram.com/delicatta.crochett"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-rose hover:underline text-lg"
-          >
+          <a href="https://instagram.com/delicatta.crochett" target="_blank" rel="noopener noreferrer" className="text-rose hover:underline text-lg">
             @delicatta.crochett
           </a>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {products.slice(0, 6).map((product) => (
-            <div key={product.id} className="aspect-square overflow-hidden rounded-lg">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="h-full w-full object-cover hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-          ))}
+          {products.slice(0, 6).map(product => <div key={product.id} className="aspect-square overflow-hidden rounded-lg">
+              <img src={product.image} alt={product.name} className="h-full w-full object-cover hover:scale-110 transition-transform duration-300" />
+            </div>)}
         </div>
 
         <div className="text-center mt-8">
-          <Button
-            onClick={() => window.open("https://instagram.com/delicatta.crochett", "_blank")}
-            variant="outline"
-            size="lg"
-          >
+          <Button onClick={() => window.open("https://instagram.com/delicatta.crochett", "_blank")} variant="outline" size="lg">
             Seguir no Instagram
           </Button>
         </div>
@@ -355,12 +302,7 @@ const Home = () => {
               <div>
                 <h3 className="font-serif text-xl font-bold mb-6">Contato Direto</h3>
                 <div className="space-y-4">
-                  <a
-                    href="https://wa.me/5517991483104"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:shadow-md transition-shadow"
-                  >
+                  <a href="https://wa.me/5517991483104" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:shadow-md transition-shadow">
                     <Phone className="h-5 w-5 text-rose flex-shrink-0" />
                     <div>
                       <p className="font-semibold">WhatsApp</p>
@@ -368,12 +310,7 @@ const Home = () => {
                     </div>
                   </a>
 
-                  <a
-                    href="https://instagram.com/delicatta.crochett"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:shadow-md transition-shadow"
-                  >
+                  <a href="https://instagram.com/delicatta.crochett" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-background rounded-lg border border-border hover:shadow-md transition-shadow">
                     <Instagram className="h-5 w-5 text-rose flex-shrink-0" />
                     <div>
                       <p className="font-semibold">Instagram</p>
@@ -403,14 +340,27 @@ const Home = () => {
               <div>
                 <h3 className="font-serif text-xl font-bold mb-6">Como Funciona</h3>
                 <div className="space-y-4">
-                  {[
-                    { step: "1", title: "Entre em contato", desc: "Via WhatsApp, Instagram ou formulário" },
-                    { step: "2", title: "Conte sua ideia", desc: "Escolha uma peça do portfolio ou descreva sua ideia personalizada" },
-                    { step: "3", title: "Receba orçamento", desc: "Você receberá um orçamento personalizado e prazo de entrega" },
-                    { step: "4", title: "Acompanhe a produção", desc: "Você poderá acompanhar o desenvolvimento da sua peça" },
-                    { step: "5", title: "Receba sua peça", desc: "Entrega ou retirada conforme combinado" }
-                  ].map((item) => (
-                    <div key={item.step} className="flex items-start gap-3">
+                  {[{
+                  step: "1",
+                  title: "Entre em contato",
+                  desc: "Via WhatsApp, Instagram ou formulário"
+                }, {
+                  step: "2",
+                  title: "Conte sua ideia",
+                  desc: "Escolha uma peça do portfolio ou descreva sua ideia personalizada"
+                }, {
+                  step: "3",
+                  title: "Receba orçamento",
+                  desc: "Você receberá um orçamento personalizado e prazo de entrega"
+                }, {
+                  step: "4",
+                  title: "Acompanhe a produção",
+                  desc: "Você poderá acompanhar o desenvolvimento da sua peça"
+                }, {
+                  step: "5",
+                  title: "Receba sua peça",
+                  desc: "Entrega ou retirada conforme combinado"
+                }].map(item => <div key={item.step} className="flex items-start gap-3">
                       <div className="w-8 h-8 rounded-full bg-rose/20 flex items-center justify-center flex-shrink-0">
                         <span className="text-sm font-bold text-rose">{item.step}</span>
                       </div>
@@ -418,8 +368,7 @@ const Home = () => {
                         <h4 className="font-semibold mb-1">{item.title}</h4>
                         <p className="text-sm text-muted-foreground">{item.desc}</p>
                       </div>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
               </div>
 
@@ -477,58 +426,42 @@ const Home = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Label htmlFor="name">Nome *</Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Seu nome completo"
-                      required
-                    />
+                    <Input id="name" value={formData.name} onChange={e => setFormData({
+                    ...formData,
+                    name: e.target.value
+                  })} placeholder="Seu nome completo" required />
                   </div>
 
                   <div>
                     <Label htmlFor="whatsapp">WhatsApp *</Label>
-                    <Input
-                      id="whatsapp"
-                      value={formData.whatsapp}
-                      onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
-                      placeholder="(00) 00000-0000"
-                      required
-                    />
+                    <Input id="whatsapp" value={formData.whatsapp} onChange={e => setFormData({
+                    ...formData,
+                    whatsapp: e.target.value
+                  })} placeholder="(00) 00000-0000" required />
                   </div>
 
                   <div>
                     <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="seu@email.com"
-                    />
+                    <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} placeholder="seu@email.com" />
                   </div>
 
                   <div>
                     <Label htmlFor="subject">Assunto *</Label>
-                    <Input
-                      id="subject"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="Sobre o que você quer falar?"
-                      required
-                    />
+                    <Input id="subject" value={formData.subject} onChange={e => setFormData({
+                    ...formData,
+                    subject: e.target.value
+                  })} placeholder="Sobre o que você quer falar?" required />
                   </div>
 
                   <div>
                     <Label htmlFor="message">Mensagem *</Label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Conte-nos mais sobre sua ideia ou dúvida..."
-                      rows={5}
-                      required
-                    />
+                    <Textarea id="message" value={formData.message} onChange={e => setFormData({
+                    ...formData,
+                    message: e.target.value
+                  })} placeholder="Conte-nos mais sobre sua ideia ou dúvida..." rows={5} required />
                   </div>
 
                   <Button type="submit" variant="rose" className="w-full" size="lg">
@@ -545,13 +478,7 @@ const Home = () => {
         </div>
       </section>
 
-      <ProductModal
-        product={selectedProduct}
-        open={isModalOpen}
-        onOpenChange={setIsModalOpen}
-      />
-    </div>
-  );
+      <ProductModal product={selectedProduct} open={isModalOpen} onOpenChange={setIsModalOpen} />
+    </div>;
 };
-
 export default Home;
