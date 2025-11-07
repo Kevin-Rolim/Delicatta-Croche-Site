@@ -388,17 +388,7 @@ const Home = () => {
                       Qual o prazo de produção?
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      Varia de 5 a 20 dias úteis dependendo da complexidade da peça. Informamos o prazo no orçamento.
-                    </p>
-                  </div>
-
-                  <div className="p-4 bg-background rounded-lg border border-border">
-                    <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <Truck className="h-4 w-4 text-rose" />
-                      Enviam para outras cidades?
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Sim! Trabalhamos com envios para todo o Brasil via Correios ou transportadora.
+                      O prazo varia de acordo com cada peça. Informamos o tempo estimado no momento do orçamento.
                     </p>
                   </div>
 
@@ -408,7 +398,7 @@ const Home = () => {
                       Aceitam sugestões de cores e tamanhos?
                     </h4>
                     <p className="text-sm text-muted-foreground">
-                      Claro! Todas as nossas peças podem ser adaptadas em cores, tamanhos e detalhes.
+                      Sim! As adaptações de cores, tamanhos e detalhes são definidas em comum acordo durante o orçamento.
                     </p>
                   </div>
                 </div>
