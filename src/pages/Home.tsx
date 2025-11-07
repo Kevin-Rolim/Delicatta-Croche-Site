@@ -354,10 +354,6 @@ const Home = () => {
                   desc: "Você receberá um orçamento personalizado e prazo de entrega"
                 }, {
                   step: "4",
-                  title: "Acompanhe a produção",
-                  desc: "Você poderá acompanhar o desenvolvimento da sua peça"
-                }, {
-                  step: "5",
                   title: "Receba sua peça",
                   desc: "Entrega ou retirada conforme combinado"
                 }].map(item => <div key={item.step} className="flex items-start gap-3">
