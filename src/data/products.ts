@@ -1,10 +1,13 @@
-import mantaImage from "@/assets/products/manta-aconchego.jpg";
-import almofadaImage from "@/assets/products/almofada-flores.jpg";
-import amigurumiImage from "@/assets/products/amigurumi-coelho.jpg";
-import jogoAmericanoImage from "@/assets/products/jogo-americano.jpg";
-import cestaImage from "@/assets/products/cesta-organizadora.jpg";
-import guirlandaImage from "@/assets/products/guirlanda-decorativa.jpg";
-import portaCoposImage from "@/assets/products/porta-copos.jpg";
+// src/data/products.ts
+
+import biquiniImage from "@/assets/products/biquine_tons_marrons.jpg";
+import bolsaAzulImage from "@/assets/products/bolsa_azul.jpg";
+import bolsaBegeImage from "@/assets/products/bolsa_bege.jpg";
+import bolsaChiqueImage from "@/assets/products/bolsa_chique.jpg";
+import estrelasImage from "@/assets/products/estrelas.jpg";
+import bolsaRosaImage from "@/assets/products/bolsa_rosa.jpg";
+import pingenteImage from "@/assets/products/pingente.jpg";
+import bolsaSimplesImage from "@/assets/products/bolsa_simples.jpg";
 
 export interface Product {
   id: number;
@@ -21,79 +24,90 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Manta Aconchego",
-    description: "Manta aconchegante em crochê, perfeita para decorar o sofá ou aquecer nas noites frias. Confeccionada com linha 100% algodão, macia ao toque e resistente.",
-    material: "Linha 100% algodão premium",
-    dimensions: "Aproximadamente 1,40m x 1,80m",
-    colors: "Rosa, creme, lilás, azul bebê, bege",
-    productionTime: "15 a 20 dias úteis",
-    care: "Lavar à mão com sabão neutro, não torcer, secar à sombra",
-    image: mantaImage,
+    name: "Biquíni Terracota Listrado",
+    description: "Conjunto de biquíni em crochê, perfeito para o verão. O top faixa com listras e amarração frontal oferece um charme único, enquanto a calcinha de amarrar lateral garante o ajuste perfeito.",
+    material: "Linha 100% algodão mercerizado (própria para moda praia, secagem rápida).",
+    dimensions: "Tamanhos P, M e G (sob encomenda). Ajustável nas amarrações.",
+    colors: "Tons terrosos (marrom e bege). Outras combinações sob consulta.",
+    productionTime: "7 a 10 dias úteis",
+    care: "Lavar à mão com sabão neutro, não deixar de molho, secar à sombra. Não guardar úmido.",
+    image: biquiniImage,
   },
   {
     id: 2,
-    name: "Almofada Flores",
-    description: "Almofada decorativa em crochê com delicado padrão de flores. Ideal para dar charme ao sofá, cama ou poltrona. Cada peça é única.",
-    material: "Linha de algodão com enchimento antialérgico",
-    dimensions: "40cm x 40cm",
-    colors: "Rosa claro, branco, pêssego, lilás",
-    productionTime: "7 a 10 dias úteis",
-    care: "Lavar à mão com água fria, não usar alvejante",
-    image: almofadaImage,
+    name: "Ecobag 'Flores do Campo'",
+    description: "Bolsa estilo 'tote' (ecobag) em crochê azul-bebê, com delicadas margaridas bordadas à mão. Perfeita para saídas rápidas, levar livros ou um passeio no parque. Leve, prática e charmosa.",
+    material: "Linha 100% algodão.",
+    dimensions: "Aprox. 30cm (largura) x 35cm (altura) (sem contar a alça).",
+    colors: "Azul-bebê com bordado branco/amarelo. Disponível em outras cores pastel.",
+    productionTime: "5 a 7 dias úteis",
+    care: "Lavar à mão com cuidado, secar à sombra para não desbotar.",
+    image: bolsaAzulImage,
   },
   {
     id: 3,
-    name: "Amigurumi Coelhinho",
-    description: "Adorável coelhinho amigurumi feito à mão. Perfeito como presente ou decoração. Seguro para crianças, confeccionado com materiais antialérgicos.",
-    material: "Linha de algodão, enchimento siliconado, olhos de segurança",
-    dimensions: "Aproximadamente 25cm de altura",
-    colors: "Rosa, branco, bege, cinza, marrom",
-    productionTime: "5 a 7 dias úteis",
-    care: "Lavar à mão com sabão neutro, não deixar de molho",
-    image: amigurumiImage,
+    name: "Bolsa Rede 'Estrela do Mar'",
+    description: "Uma bolsa leve e versátil com trama de rede, ideal para a praia ou um passeio casual. O fundo fechado garante que seus itens menores fiquem seguros. Acompanha um charmoso pingente de estrela do mar.",
+    material: "Linha de algodão ou barbante ecológico.",
+    dimensions: "Aprox. 35cm (largura) x 40cm (altura). É expansível devido à trama.",
+    colors: "Bege natural. Outras cores sob consulta.",
+    productionTime: "7 dias úteis",
+    care: "Lavar à mão, secar na horizontal para não deformar a trama.",
+    image: bolsaBegeImage,
   },
   {
     id: 4,
-    name: "Jogo Americano",
-    description: "Conjunto de jogos americanos em crochê para valorizar sua mesa. Design sofisticado e artesanal que combina com diversos estilos de decoração.",
-    material: "Linha de algodão resistente",
-    dimensions: "35cm de diâmetro (cada peça)",
-    colors: "Natural, verde água, bege, rosa antigo",
-    productionTime: "10 a 12 dias úteis (conjunto com 4 peças)",
-    care: "Lavar à mão, secar na horizontal",
-    image: jogoAmericanoImage,
+    name: "Clutch 'Noite Elegante'",
+    description: "Bolsa de mão (clutch) estilo envelope, perfeita para festas e ocasiões especiais. O design em V com borda em cor contrastante e o tassel dão um toque de sofisticação. Alça de corrente dourada removível.",
+    material: "Fio de malha ou barbante premium, alça de corrente de metal, fecho imantado interno.",
+    dimensions: "Aprox. 25cm (largura) x 15cm (altura).",
+    colors: "Branco-gelo com borda vinho/marsala. (Outras combinações sob encomenda).",
+    productionTime: "5 dias úteis",
+    care: "Não lavar. Limpar com pano levemente úmido. Guardar em local seco para não oxidar o metal.",
+    image: bolsaChiqueImage,
   },
   {
     id: 5,
-    name: "Cesta Organizadora",
-    description: "Cesta organizadora versátil em crochê. Perfeita para guardar brinquedos, roupas, mantas ou itens de decoração. Funcional e decorativa.",
-    material: "Fio de malha ou linha grossa de algodão",
-    dimensions: "30cm de diâmetro x 25cm de altura",
-    colors: "Natural com detalhes em branco, rosa, cinza",
-    productionTime: "7 a 10 dias úteis",
-    care: "Limpar com pano úmido, não lavar em máquina",
-    image: cestaImage,
+    name: "Bolsa Transversal 'Verano'",
+    description: "Uma bolsinha leve e despojada, ideal para carregar o essencial (celular, chaves, cartão). Feita com linha mesclada em tons de rosa, é a companhia perfeita para festivais ou passeios rápidos.",
+    material: "Linha de algodão mesclada, argolas de metal.",
+    dimensions: "Aprox. 20cm (largura) x 18cm (altura).",
+    colors: "Mesclado em tons de rosa, pink e lilás.",
+    productionTime: "3 a 5 dias úteis",
+    care: "Lavar à mão com cuidado, secar à sombra.",
+    image: bolsaRosaImage, // Nome da variável corrigido
   },
   {
     id: 6,
-    name: "Guirlanda Decorativa",
-    description: "Guirlanda artesanal em crochê com flores delicadas. Ideal para decorar portas, paredes ou festas. Traz charme e aconchego para qualquer ambiente.",
-    material: "Linha de algodão, estrutura em aramado forrado",
-    dimensions: "35cm de diâmetro",
-    colors: "Rosa, pêssego, branco, lilás, verde",
-    productionTime: "10 a 15 dias úteis",
-    care: "Manter em local seco, limpar com pano macio",
-    image: guirlandaImage,
+    name: "Pingente Decorativo 'Doce Lar'",
+    description: "Pingente decorativo feito à mão, com dois corações de crochê, contas de madeira e um tassel. Perfeito para pendurar em portas, espelhos, ou no retrovisor do carro (como 'car charm').",
+    material: "Linha de algodão, contas de madeira.",
+    dimensions: "Aprox. 25cm de comprimento total.",
+    colors: "Vermelho. (Disponível em rosa, bege, azul, verde).",
+    productionTime: "3 dias úteis",
+    care: "Não molhar as contas de madeira. Limpar o pó com espanador ou pano seco.",
+    image: pingenteImage,
   },
   {
     id: 7,
-    name: "Porta-Copos",
-    description: "Conjunto de porta-copos em crochê com acabamento delicado. Protege suas superfícies com estilo e elegância artesanal.",
-    material: "Linha 100% algodão",
-    dimensions: "10cm de diâmetro (cada peça)",
-    colors: "Rosa, verde água, creme, pêssego",
-    productionTime: "5 a 7 dias úteis (conjunto com 6 peças)",
-    care: "Lavar à mão com sabão neutro",
-    image: portaCoposImage,
+    name: "Chaveiro Estrela (Amigurumi)",
+    description: "Chaveiro fofo em formato de estrela, feito na técnica amigurumi. É macio, leve e perfeito para decorar sua bolsa, mochila ou chaves. Um ótimo presente!",
+    material: "Linha de algodão, enchimento siliconado antialérgico, argola de metal.",
+    dimensions: "Aprox. 7cm x 7cm (sem a argola).",
+    colors: "Amarelo pastel, Azul bebê. (Grande variedade de cores disponíveis).",
+    productionTime: "3 dias úteis",
+    care: "Lavar à mão com muito cuidado, apertando levemente. Não torcer.",
+    image: estrelasImage,
+  },
+  { // Produto 8 - Corrigido (Substituído o duplicado pelo novo)
+    id: 8,
+    name: "Porta-Celular 'Piquenique'",
+    description: "Uma bolsinha charmosa e prática, ideal para levar seu celular e documentos em um passeio. O design em rede (ponto vazado) é leve e combina com um look casual, como um piquenique no parque.",
+    material: "Linha de algodão ou barbante ecológico.",
+    dimensions: "Aprox. 12cm (largura) x 18cm (altura). Perfeito para smartphones.",
+    colors: "Bege natural. (Outras cores sob consulta).",
+    productionTime: "3 a 5 dias úteis",
+    care: "Lavar à mão com cuidado, secar na horizontal.",
+    image: bolsaSimplesImage, // Usando a nova imagem
   },
 ];

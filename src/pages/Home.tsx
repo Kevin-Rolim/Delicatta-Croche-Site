@@ -208,7 +208,7 @@ const Home = () => {
                 <ShieldCheck className="h-10 w-10 text-rose mx-auto mb-4" />
                 <h4 className="font-semibold mb-2">Qualidade Garantida</h4>
                 <p className="text-sm text-muted-foreground">
-                  Materiais premium e acabamento impecável
+                  Materiais de qualidade e acabamento impecável
                 </p>
               </div>
             </div>
