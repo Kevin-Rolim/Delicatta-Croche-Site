@@ -1,73 +1,33 @@
-# Welcome to your Lovable project
+### ✨ Delicatta Crafts - Catálogo e Showcase de Artesanato
 
-## Project info
+Esta aplicação é um catálogo digital de produtos artesanais, focada na exibição de itens exclusivos (como bolsas, biquínis e acessórios, inferido pelas imagens), com uma experiência de usuário rica e moderna. O projeto prioriza a comunicação direta com o cliente através do WhatsApp para consultas e pedidos, agilizando o processo de compra de itens feitos à mão.
 
-**URL**: https://lovable.dev/projects/4b78bf16-a6d9-41f4-aabe-6cd818e53fe9
+### 🚀 Tecnologias Essenciais
 
-## How can I edit this code?
+O projeto é uma aplicação *frontend* moderna, construída com as seguintes ferramentas de ponta:
 
-There are several ways of editing your application.
+| Categoria | Tecnologia | Uso no Projeto |
+| :--- | :--- | :--- |
+| **Framework** | React | Criação de uma interface de usuário dinâmica e responsiva. |
+| **Linguagem** | TypeScript | Garante tipagem segura e maior robustez ao código. |
+| **Build Tool** | Vite | Servidor de desenvolvimento rápido e otimização de build para produção. |
+| **Estilização** | Tailwind CSS & PostCSS | Abordagem *utility-first* para um design customizável e eficiente. |
+| **Componentes** | Shadcn UI (e Radix-UI) | Biblioteca de componentes acessíveis e estilizados com Tailwind (por `src/components/ui/`). |
+| **Gerenciador** | Bun | Ferramenta moderna e rápida para gerenciamento de pacotes e *runtime* (principalmente para desenvolvimento). |
 
-**Use Lovable**
+-----
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4b78bf16-a6d9-41f4-aabe-6cd818e53fe9) and start prompting.
+### 📂 Estrutura e Arquitetura
 
-Changes made via Lovable will be committed automatically to this repo.
+Este projeto segue a arquitetura de uma Single Page Application (SPA), onde a lógica de dados e a interface estão concentradas no cliente.
 
-**Use your preferred IDE**
+  * **`src/data/`**: Esta é uma pasta crucial. Ela armazena os dados dos produtos de forma estática (`products.ts`). Ideal para um catálogo onde a listagem de produtos não muda constantemente ou onde não se deseja manter um banco de dados complexo (Headless CMS ou API).
+  * **`src/assets/products/`**: Contém as imagens de alta qualidade dos itens artesanais (bolsas, biquínis, pingentes), que são o coração do catálogo.
+  * **`src/components/`**: Módulos específicos para a loja, como:
+      * `ProductCard.tsx`: Exibição compacta de cada produto na listagem.
+      * `ProductModal.tsx`: Visualização detalhada do produto, provavelmente ativada ao clicar no `Card`.
+      * `WhatsAppButton.tsx`: Componente chave para a conversão, permitindo contato direto.
+  * **`src/pages/`**: Gerencia as rotas da aplicação (`Home.tsx`, `NotFound.tsx`).
+  * **`src/lib/utils.ts`**: Utilitários para classes de CSS (como `clsx`) e outras funções auxiliares.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4b78bf16-a6d9-41f4-aabe-6cd818e53fe9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+> **💡 Profundidade:** A escolha de manter os dados em `src/data/products.ts` simplifica a implantação (pois é um site estático ou com renderização no lado do cliente), mas exige que o código seja atualizado e re-implantado a cada novo produto. Para escalar, uma futura melhoria poderia ser a integração com um **Headless CMS** (como Strapi, Contentful ou Sanity) ou uma **API/Backend simples**.

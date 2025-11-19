@@ -75,7 +75,7 @@ export const products: Product[] = [
     colors: "Mesclado em tons de rosa, pink e lilás.",
     productionTime: "3 a 5 dias úteis",
     care: "Lavar à mão com cuidado, secar à sombra.",
-    image: bolsaRosaImage, // Nome da variável corrigido
+    image: bolsaRosaImage,
   },
   {
     id: 6,
@@ -99,7 +99,7 @@ export const products: Product[] = [
     care: "Lavar à mão com muito cuidado, apertando levemente. Não torcer.",
     image: estrelasImage,
   },
-  { // Produto 8 - Corrigido (Substituído o duplicado pelo novo)
+  {
     id: 8,
     name: "Porta-Celular 'Piquenique'",
     description: "Uma bolsinha charmosa e prática, ideal para levar seu celular e documentos em um passeio. O design em rede (ponto vazado) é leve e combina com um look casual, como um piquenique no parque.",
@@ -108,6 +108,6 @@ export const products: Product[] = [
     colors: "Bege natural. (Outras cores sob consulta).",
     productionTime: "3 a 5 dias úteis",
     care: "Lavar à mão com cuidado, secar na horizontal.",
-    image: bolsaSimplesImage, // Usando a nova imagem
+    image: bolsaSimplesImage,
   },
 ];
